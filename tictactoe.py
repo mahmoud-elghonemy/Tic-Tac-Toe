@@ -42,7 +42,14 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-
+    possible_moves=set()
+    for i , row in enumerate(board):
+        for j,item in enumerate(row):
+            if item==None:
+                 possible_moves.add((i,j))
+    
+    return possible_moves 
+     
 
 
 def result(board, action):
