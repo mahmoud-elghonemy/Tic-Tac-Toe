@@ -24,6 +24,17 @@ def player(board):
     """
     Returns player who has the next turn on a board.
     """
+    Xcount = 0
+    Ocount = 0
+
+    for row in board:
+        Xcount += row.count(X)
+        Ocount += row.count(O)
+
+    if Xcount <= Ocount:
+        return X
+    else:
+        return O
     
 
 
