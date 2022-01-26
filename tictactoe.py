@@ -99,7 +99,17 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-   
+   # game is won by one of the players
+    if winner(board) != None:
+        return True
+
+    # moves still possible
+    for row in board:
+        if EMPTY in row:
+            return False
+
+    # no possible moves
+    return True
    
 
 def utility(board):
